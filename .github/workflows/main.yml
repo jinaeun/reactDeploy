@@ -61,8 +61,8 @@ jobs:
         run: |
           echo "${{ secrets.SERVER_SSH_KEY }}" | base64 -d > $HOME/myictKey.pem
           chmod 400 $HOME/myictKey.pem
-          scp -i $HOME/myictKey.pem -o StrictHostKeyChecking=no back/build/libs/*.war ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/appReact.war
-          ssh -i $HOME/myictKey.pem -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} 'bash ~/script2.sh'
+          scp -v -i $HOME/myictKey.pem -o StrictHostKeyChecking=no back/build/libs/*.war ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:~/appReact.war
+          ssh -v -i $HOME/myictKey.pem -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} 'bash ~/script2.sh'
         env:
           SSH_USER: ${{ secrets.SERVER_USER }}
           SSH_KNOWN_HOSTS: ${{ secrets.SERVER_HOST }}
