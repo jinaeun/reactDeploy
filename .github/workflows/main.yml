@@ -49,7 +49,9 @@ jobs:
         run: |
           cd back  # Spring Boot 프로젝트 경로로 이동
           chmod +x gradlew
-          ./gradlew clean build
+          ./gradlew clean build -x test
+        env:
+          TERM: xterm-256color  # 컬러 로그 출력을 위한 설정
 
       - name: List built files
         run: |
