@@ -54,7 +54,7 @@ dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'commons-fileupload:commons-fileupload:1.4'
-	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
